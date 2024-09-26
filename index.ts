@@ -35,16 +35,16 @@ async function exportUsers() {
     console.error("Error exporting users:", error);
   }
 }
-const importApp = admin.initializeApp(
-  {
-    credential: admin.credential.cert("./credentials-import.json"),
-  },
-  "import",
-);
-
-const importAuth = admin.auth(importApp);
 
 async function importUsers() {
+  const importApp = admin.initializeApp(
+    {
+      credential: admin.credential.cert("./credentials-import.json"),
+    },
+    "import",
+  );
+
+  const importAuth = admin.auth(importApp);
   try {
     const users = JSON.parse(fs.readFileSync("users.json", "utf8"));
 
