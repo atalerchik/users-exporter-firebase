@@ -3,7 +3,7 @@
   "module": "src/index.js",
   "type": "module",
   "scripts": {
-    "start": "node --env-file=.env src/index.js",
+    "start": "node --env-file='.env' src/index.js",
     "start:import": "node --env-file=.env src/importUsers.js",
     "start:export": "node --env-file=.env src/exportUsers.js",
     "start:cleanup": "node --env-file=.env src/cleanup.js"

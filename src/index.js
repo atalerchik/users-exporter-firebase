@@ -1,6 +1,6 @@
-import { exportUsers } from "./exportUsers";
-import { importUsers } from "./importUsers";
-import { deleteFiles } from "./cleanup";
+import { exportUsers } from "./exportUsers.js";
+import { importUsers } from "./importUsers.js";
+import { deleteFiles } from "./cleanup.js";
 
 async function run() {
   try {
