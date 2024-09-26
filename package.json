@@ -12,6 +12,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "bun": "^1.1.29",
     "firebase-admin": "^12.5.0"
   }
 }
