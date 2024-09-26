@@ -12,7 +12,7 @@ const exportAuth = admin.auth(exportApp);
 
 async function exportUsers() {
   try {
-    let users: any = [];
+    let users = [];
     let result;
     let nextPageToken;
 
@@ -63,26 +63,26 @@ async function importUsers() {
   }
 }
 
-async function deleteAllUsers(nextPageToken?: string) {
-  try {
-    const result = await importAuth.listUsers(1000, nextPageToken);
-
-    const uids = result.users.map((userRecord) => userRecord.uid);
-
-    if (uids.length > 0) {
-      await importAuth.deleteUsers(uids);
-      console.log(`Successfully deleted ${uids.length} users.`);
-    }
-
-    if (result.pageToken) {
-      await deleteAllUsers(result.pageToken);
-    } else {
-      console.log("All users deleted.");
-    }
-  } catch (error) {
-    console.error("Error deleting users:", error);
-  }
-}
+// async function deleteAllUsers(nextPageToken) {
+//   try {
+//     const result = await importAuth.listUsers(1000, nextPageToken);
+//
+//     const uids = result.users.map((userRecord) => userRecord.uid);
+//
+//     if (uids.length > 0) {
+//       await importAuth.deleteUsers(uids);
+//       console.log(`Successfully deleted ${uids.length} users.`);
+//     }
+//
+//     if (result.pageToken) {
+//       await deleteAllUsers(result.pageToken);
+//     } else {
+//       console.log("All users deleted.");
+//     }
+//   } catch (error) {
+//     console.error("Error deleting users:", error);
+//   }
+// }
 
 async function deleteFiles() {
   fs.rmSync("./users.json");

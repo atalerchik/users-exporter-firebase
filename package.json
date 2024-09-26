@@ -1,12 +1,9 @@
 {
   "name": "export-users-firbase",
-  "module": "index.ts",
+  "module": "index.js",
   "type": "module",
   "scripts": {
-    "start": "bun run index.ts"
-  },
-  "devDependencies": {
-    "@types/bun": "latest"
+    "start": "node --env-file=.env index.js"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
